@@ -123,15 +123,43 @@ export function Footer() {
           </p>
 
           {/* Payment icons */}
-          <div className="flex items-center gap-3" aria-label="Accepted payment methods">
-            {['Visa', 'MC', 'Amex', 'PayPal', 'ApplePay'].map((method) => (
-              <span
-                key={method}
-                className="px-2 py-1 text-[9px] font-bold tracking-wide border border-white/15 rounded-xs text-canvas/30"
-              >
-                {method}
-              </span>
-            ))}
+          <div className="flex items-center gap-2" aria-label="Accepted payment methods">
+            {/* Visa */}
+            <svg width="40" height="26" viewBox="0 0 48 32" role="img" aria-label="Visa" className="rounded-[3px]">
+              <rect width="48" height="32" rx="4" fill="#fff" />
+              <text x="24" y="21" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="700" fontStyle="italic" fontSize="13" letterSpacing="0.5" fill="#1A1F71">VISA</text>
+            </svg>
+
+            {/* Mastercard */}
+            <svg width="40" height="26" viewBox="0 0 48 32" role="img" aria-label="Mastercard" className="rounded-[3px]">
+              <rect width="48" height="32" rx="4" fill="#fff" />
+              <circle cx="20" cy="16" r="8" fill="#EB001B" />
+              <circle cx="28" cy="16" r="8" fill="#F79E1B" />
+              <path d="M24 10.1a8 8 0 0 0 0 11.8 8 8 0 0 0 0-11.8Z" fill="#FF5F00" />
+            </svg>
+
+            {/* Amex */}
+            <svg width="40" height="26" viewBox="0 0 48 32" role="img" aria-label="American Express" className="rounded-[3px]">
+              <rect width="48" height="32" rx="4" fill="#1F72CD" />
+              <text x="24" y="20" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="8.5" letterSpacing="0.3" fill="#fff">AMEX</text>
+            </svg>
+
+            {/* PayPal */}
+            <svg width="40" height="26" viewBox="0 0 48 32" role="img" aria-label="PayPal" className="rounded-[3px]">
+              <rect width="48" height="32" rx="4" fill="#fff" />
+              <text x="24" y="21" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="700" fontStyle="italic" fontSize="11">
+                <tspan fill="#003087">Pay</tspan><tspan fill="#0099CF">Pal</tspan>
+              </text>
+            </svg>
+
+            {/* Apple Pay */}
+            <svg width="40" height="26" viewBox="0 0 48 32" role="img" aria-label="Apple Pay" className="rounded-[3px]">
+              <rect width="48" height="32" rx="4" fill="#fff" />
+              <g fill="#000">
+                <path d="M13.6 11.3c.4-.5.7-1.2.6-1.9-.6 0-1.4.4-1.8.9-.4.4-.7 1.1-.6 1.8.7 0 1.4-.4 1.8-.8Zm.6 1c-1 0-1.8.6-2.3.6s-1.2-.5-1.9-.5c-1 0-1.9.6-2.4 1.4-1 1.8-.3 4.4.7 5.9.5.7 1.1 1.5 1.8 1.5s.9-.5 1.8-.5 1.1.5 1.9.5 1.2-.7 1.7-1.4c.5-.8.8-1.5.8-1.6 0 0-1.5-.6-1.5-2.3 0-1.4 1.2-2.1 1.2-2.1-.6-1-1.7-1.1-2-1.1Z" />
+                <text x="30" y="20" fontFamily="Arial, sans-serif" fontWeight="600" fontSize="10">Pay</text>
+              </g>
+            </svg>
           </div>
         </div>
       </div>

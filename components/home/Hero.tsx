@@ -14,7 +14,27 @@ const fadeUp = (delay: number) => ({
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-surface min-h-[85svh] flex items-stretch">
-      <div className="w-full max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] items-center gap-0">
+      {/* Floating decorative orbs */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-10 left-[6%] w-40 h-40 rounded-full bg-clay/10 blur-3xl"
+        animate={{ y: [0, -28, 0], x: [0, 14, 0] }}
+        transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute bottom-[12%] left-[38%] w-28 h-28 rounded-full bg-ink/5 blur-2xl"
+        animate={{ y: [0, 22, 0], x: [0, -16, 0] }}
+        transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute top-[20%] right-[4%] w-32 h-32 rounded-full bg-clay/8 blur-3xl"
+        animate={{ y: [0, 26, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      <div className="relative w-full max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] items-center gap-0">
 
         {/* Text column */}
         <div className="py-16 lg:py-24 pr-0 lg:pr-16 flex flex-col justify-center">
@@ -86,7 +106,11 @@ export function Hero() {
           />
           <div className="absolute inset-0 bg-clay/5 mix-blend-multiply pointer-events-none" />
 
-          <div className="absolute bottom-8 left-6 bg-canvas/95 backdrop-blur-sm px-4 py-3 rounded-sm shadow-md flex items-center gap-3">
+          <motion.div
+            className="absolute bottom-8 left-6 bg-canvas/95 backdrop-blur-sm px-4 py-3 rounded-sm shadow-md flex items-center gap-3"
+            animate={{ y: [0, -9, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+          >
             <div className="w-1 h-8 bg-clay rounded-full" />
             <div>
               <p className="text-xs text-muted">Featured</p>
@@ -98,7 +122,7 @@ export function Hero() {
             >
               $65
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
