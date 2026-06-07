@@ -77,7 +77,7 @@ export function Hero() {
           className="relative h-[55svh] lg:h-[85svh] -mx-6 lg:mx-0"
         >
           <Image
-            src="https://picsum.photos/seed/vessel-hero/900/1100"
+            src="https://images.unsplash.com/photo-1536936812504-0e77dc3f0b40?w=900&h=1100&fit=crop&auto=format&q=80"
             alt="A collection of VESSEL stoneware ceramics — mugs, bowls, and vases in warm bone white"
             fill
             priority

@@ -23,7 +23,7 @@ export function BrandStory() {
             className="relative h-72 lg:h-auto min-h-96"
           >
             <Image
-              src="https://picsum.photos/seed/vessel-studio/900/700"
+              src="https://images.unsplash.com/photo-1595351298020-038700609878?w=900&h=700&fit=crop&auto=format&q=80"
               alt="The VESSEL studio — a ceramic potter working at a wheel"
               fill
               className="object-cover"

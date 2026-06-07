@@ -16,7 +16,7 @@ export default function AboutPage() {
       <section className="relative bg-surface overflow-hidden min-h-[55svh] flex items-end">
         <div className="absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/vessel-about-hero/1400/700"
+            src="https://images.unsplash.com/photo-1676125105332-608345abe20e?w=1400&h=700&fit=crop&auto=format&q=80"
             alt="The VESSEL studio"
             fill
             priority
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
           <div className="relative aspect-[3/4] rounded-sm overflow-hidden bg-surface">
             <Image
-              src="https://picsum.photos/seed/vessel-founder/600/800"
+              src="https://images.unsplash.com/photo-1528466829416-7c2576152a09?w=600&h=800&fit=crop&auto=format&q=80"
               alt="VESSEL founder at the pottery wheel"
               fill
               className="object-cover"
@@ -111,15 +111,15 @@ export default function AboutPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { seed: 'vessel-process-1', caption: 'Throwing on the wheel' },
-              { seed: 'vessel-process-2', caption: 'Hand-trimming the foot ring' },
-              { seed: 'vessel-process-3', caption: 'Loading the kiln' },
-              { seed: 'vessel-process-4', caption: 'Quality check after firing' },
-            ].map(({ seed, caption }) => (
-              <div key={seed} className="flex flex-col gap-3">
+              { image: 'https://images.unsplash.com/photo-1595351298020-038700609878?w=800&h=600&fit=crop&auto=format&q=80', caption: 'Throwing on the wheel' },
+              { image: 'https://images.unsplash.com/photo-1739467516257-20c1d7f1949a?w=800&h=600&fit=crop&auto=format&q=80', caption: 'Hand-trimming the foot ring' },
+              { image: 'https://images.unsplash.com/photo-1481401908818-600b7a676c0d?w=800&h=600&fit=crop&auto=format&q=80', caption: 'Loading the kiln' },
+              { image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=800&h=600&fit=crop&auto=format&q=80', caption: 'Quality check after firing' },
+            ].map(({ image, caption }) => (
+              <div key={caption} className="flex flex-col gap-3">
                 <div className="relative aspect-[4/3] rounded-xs overflow-hidden bg-surface">
                   <Image
-                    src={`https://picsum.photos/seed/${seed}/800/600`}
+                    src={image}
                     alt={caption}
                     fill
                     className="object-cover"
