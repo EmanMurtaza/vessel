@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Design Tokens ──────────────────────────────────────────────────── */
+@theme {
+  /* Palette — warm earthy neutrals + terracotta accent */
+  --color-canvas:       #FAF8F5;
+  --color-surface:      #F2EDE6;
+  --color-surface-2:    #EAE3D8;
+  --color-ink:          #1A1714;
+  --color-ink-2:        #3D3630;
+  --color-muted:        #8C8279;
+  --color-line:         #DDD8D0;
+  --color-clay:         #8B6F47;
+  --color-clay-dark:    #7A6040;
+  --color-clay-light:   #C4A882;
+  --color-white:        #FFFFFF;
+  --color-error:        #C0392B;
+  --color-success:      #27AE60;
+
+  /* Typography */
+  --font-display:       var(--font-fraunces), Georgia, 'Times New Roman', serif;
+  --font-body:          var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Border radius — editorial-warm: tight but not zero */
+  --radius-none:        0px;
+  --radius-xs:          2px;
+  --radius-sm:          4px;
+  --radius-md:          6px;
+  --radius-lg:          12px;
+  --radius-full:        9999px;
+
+  /* Shadows — low-opacity, layered */
+  --shadow-xs:   0 1px 2px 0 rgb(26 23 20 / 0.04);
+  --shadow-sm:   0 1px 3px 0 rgb(26 23 20 / 0.06), 0 1px 2px -1px rgb(26 23 20 / 0.06);
+  --shadow-md:   0 4px 6px -1px rgb(26 23 20 / 0.06), 0 2px 4px -2px rgb(26 23 20 / 0.04);
+  --shadow-lg:   0 10px 15px -3px rgb(26 23 20 / 0.08), 0 4px 6px -4px rgb(26 23 20 / 0.04);
+  --shadow-xl:   0 20px 25px -5px rgb(26 23 20 / 0.08), 0 8px 10px -6px rgb(26 23 20 / 0.04);
+
+  /* Transitions */
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
+/* ─── Font variable bridging (set by next/font) ───────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+  --font-body:    var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ─── Focus styles ───────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ─── Selection ──────────────────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-clay-light);
+  color: var(--color-ink);
+}
+
+/* ─── Typography helpers ─────────────────────────────────────────────── */
+.display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.prose-body {
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+/* ─── Scrollbar (webkit) ─────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
+
+/* ─── Reduced motion ─────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Hairline rules ─────────────────────────────────────────────────── */
+.hairline {
+  border-color: var(--color-line);
+  border-width: 0.5px;
 }
